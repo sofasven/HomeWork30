@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C70F6F032AFA705B00505D98 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70F6F022AFA705B00505D98 /* UITableViewExt.swift */; };
 		C7C0167F2AF27D8F00D09556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C0167E2AF27D8F00D09556 /* AppDelegate.swift */; };
 		C7C016812AF27D8F00D09556 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C016802AF27D8F00D09556 /* SceneDelegate.swift */; };
 		C7C016862AF27D8F00D09556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C016842AF27D8F00D09556 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C70F6F022AFA705B00505D98 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
 		C7C0167B2AF27D8F00D09556 /* RealmApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7C0167E2AF27D8F00D09556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7C016802AF27D8F00D09556 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		C7C0169C2AF283F300D09556 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C70F6F022AFA705B00505D98 /* UITableViewExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7C016A02AF285F300D09556 /* TasksTVC.swift in Sources */,
+				C70F6F032AFA705B00505D98 /* UITableViewExt.swift in Sources */,
 				C7C0167F2AF27D8F00D09556 /* AppDelegate.swift in Sources */,
 				C7C0169E2AF285D500D09556 /* TasksListTVC.swift in Sources */,
 				C7C016A62AF28A9400D09556 /* StorageManager.swift in Sources */,
