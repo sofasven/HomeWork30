@@ -11,11 +11,15 @@ import RealmSwift
 class TasksListTVC: UITableViewController {
     
     var tasksLists: Results<TasksList>!
+    
+    var notificationToken: NotificationToken?
 
     override func viewDidLoad() {
         super.viewDidLoad()
        // StorageManager.deleteAll()
         tasksLists = StorageManager.getAllTasksLists().sorted(byKeyPath: "name")
+        
+        addTasksListObserver()
         
         let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonSystemItemSelector))
         navigationItem.setRightBarButton(add, animated: true)
@@ -120,5 +124,33 @@ class TasksListTVC: UITableViewController {
             alertTextField.placeholder = "List name"
         }
         present(alertController, animated: true)
+    }
+    
+    private func addTasksListObserver() {
+        notificationToken = tasksLists.observe({ [weak self] changes in
+            guard let self else { return }
+            switch changes {
+                case .initial:
+                    print("= = = initial case")
+                case .update(_, let deletions, let insertions, let modifications):
+                    print("= = = deletions: \(deletions)")
+                    print("= = = insertions: \(insertions)")
+                    print("= = = modifications: \(modifications)")
+                
+                self.tableView.performBatchUpdates({
+                    
+                        self.tableView.deleteRows(at: deletions.map { IndexPath(row: $0, section: 0) },
+                                             with: .automatic)
+                        self.tableView.insertRows(at: insertions.map { IndexPath(row: $0, section: 0) },
+                                             with: .automatic)
+                        self.tableView.reloadRows(at: modifications.map { IndexPath(row: $0, section: 0) },
+                                             with: .automatic)
+                    }, completion: { _ in
+                        // ...
+                    })
+                case .error(let error):
+                    fatalError("\(error)")
+            }
+        })
     }
 }

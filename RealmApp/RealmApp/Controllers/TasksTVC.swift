@@ -107,20 +107,6 @@ class TasksTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool { true }
     
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-//        let fromRow = fromIndexPath.row
-//        let toRow = to.row
-//        let fromSection = fromIndexPath.section
-//        let toSection = to.section
-//
-//        if fromSection == 0 {
-//            let taskToMove = notCompletedTasks[fromRow]
-//            taskToMove.isComplited = true
-//        } else {
-//            let taskToMove = completedTasks[fromRow]
-//            taskToMove.isComplited = false
-//        }
-//        filteringTasks()
-//        tableView.reloadData()
     }
     
     @objc
